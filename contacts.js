@@ -49,7 +49,7 @@ export const addContact = async (name, email, phone) => {
         const newContact = { id: nanoid(), name, email, phone };
         const newContacts = [...contacts, newContact];
         await fs.writeFile(contactsPath, JSON.stringify(newContacts, null, 2));
-        return newContacts;
+        return newContact;
     }
     catch (error) {
         return null;
